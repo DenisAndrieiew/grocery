@@ -1,0 +1,24 @@
+{
+  "A": {
+    "id": "A",
+    "price": 1.25,
+    "actionCount": 3,
+    "actionPrice": 3
+  },
+  "B": {
+    "id": "B",
+    "price": 4.25,
+    "actionCount": 0
+  },
+  "C": {
+    "id": "C",
+    "price": 1,
+    "actionCount": 6,
+    "actionPrice": 5
+  },
+  "D": {
+    "id": "D",
+    "price": 0.75,
+    "actionCount": 0
+  }
+}
