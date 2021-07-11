@@ -33,33 +33,24 @@ public class Product {
         return id;
     }
 
-//    public void setId(char id) {
-//        this.id = id;
-//    }
 
     public BigDecimal getPrice() {
         return price;
     }
 
-//    public void setPrice(BigDecimal price) {
-//        this.price = price;
-//    }
+
 
     public int getActionCount() {
         return actionCount;
     }
 
-//    public void setActionCount(int actionCount) {
-//        this.actionCount = actionCount;
-//    }
+
 
     public BigDecimal getActionPrice() {
         return actionPrice;
     }
 
-//    public void setActionPrice(BigDecimal actionPrice) {
-//        this.actionPrice = actionPrice;
-//    }
+
 
     @Override
     public String toString() {

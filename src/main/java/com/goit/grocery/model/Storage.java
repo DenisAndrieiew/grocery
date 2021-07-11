@@ -13,19 +13,20 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Storage {
-
+private static final String FILE_PATH = "src\\main\\resources\\Storage.str";
     static ConcurrentHashMap<Character, Product> priceList = new ConcurrentHashMap();
     private static Storage instance = new Storage();
 
     private Storage() {
         readStorageFromFile();
     }
+    public Storage(String path){readStorageFromFile(path);}
 
     public static Storage getInstance() {
         return instance;
     }
 
-    private static void readStorageFromFile() {
+    public static void readStorageFromFile(String path) {
         final String FILE_PATH = "src\\main\\resources\\Storage.str";
         File file = new File(FILE_PATH);
         if (!file.exists()) {
@@ -49,7 +50,10 @@ public class Storage {
             System.out.println(e.getMessage());
         }
     }
-
+private static void readStorageFromFile(){
+        String path = FILE_PATH;
+        readStorageFromFile(path);
+}
     public Product getProductById(char ch) {
         return priceList.get(ch);
     }
@@ -94,7 +98,7 @@ return listOfId;
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("*********************************************************" + "\n");
-        builder.append("*Продукт*   цена * акционное количество * акционная цена*" + "\n");
+        builder.append("*Goods*   Price  * \t  Action number \t* Action price  *" + "\n");
         builder.append("*********************************************************" + "\n");
         priceList.forEach((K, V) ->
                 builder.append("*\t" + V.getId() + "\t*\t" + V.getPrice().setScale(2, RoundingMode.HALF_UP) +
